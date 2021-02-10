@@ -1,0 +1,113 @@
+provisions = [
+    {
+        label:"food",
+        name: "Food"
+    }, 
+    {
+        label:"feed",
+        name: "Feed"
+    },
+    {
+        label:"income",
+        name: "Income"
+    },
+    {
+        label:"erosion_control",
+        name: "Erosion Control"
+    },
+    {
+        label:"fuel",
+        name: "Fuel"
+    },
+    {
+        label:"soil_fertility",
+        name:"Soil Fertility"
+    }
+    ]
+
+
+requirements = [
+    {
+        label:"land",
+        name: "Land"
+
+    }, 
+    {
+        label:"labour",
+        name: "Labour"
+    },
+    {
+        label:"seed_supply",
+        name: "Seed Supply"
+    },
+    {
+        label:"inputs_and_services",
+        name: "Inputs and Services"
+    },
+    {
+        label:"knowledge_and_skills",
+        name: "Knowledge and Skills"
+    },
+    {
+        label:"water",
+        name:"Water"
+    },
+    {
+        label:"markets",
+        name:"Markets"
+    }]
+
+
+
+agroecology = [
+    {
+        label:"rainfall_min",
+        name:"Rainfall (minimum)"
+    },
+    {
+        label:"rainfall_max",
+        name:"Rainfall (maximum)"
+    },
+    {
+        label:"temp_min",
+        name:"Temperature (minimum)"
+    },
+    {
+        label:"temp_max",
+        name:"Temperature (maximum)"
+    },
+    {
+        label:"alt_min",
+        name:"Altitude (minimum)"
+    }
+    {
+        label:"alt_max",
+        name:"Altitude (maximum)"
+    },
+    {
+        label:"ph_min",
+        name:"pH (minimum)"
+    },
+    {
+        label:"ph_max",
+        name:"pH (maximum)"
+    },
+    {
+        label:"source",
+        name:"Source"
+    }
+]
+
+legumes = {
+    name: ;
+    provisions: ;
+    requirements: ;
+    agroecology: ; 
+}
+
+
+
+
+
+
+
