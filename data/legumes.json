@@ -1,0 +1,19 @@
+legume_1 = {
+    "name": "Pigeon pea (Cajanus cajan)",
+    "type": {
+        "label": "",
+        "full_name":""
+    }
+
+    "scores":{
+        "provisions":{
+
+        },
+        "requirements":{
+
+        },
+        "agroecology":{
+
+        }
+    }
+})

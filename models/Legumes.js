@@ -1,19 +1,29 @@
 const mongoose = require('mongoose')
 
-const categorySchema = mongoose.Schema({
+const nameSchema = mongoose.Schema({
     label: String,
-    name: String,
-    value: Number
+    full_name: String,
+})
+
+const scoreSchema = mongoose.Schema({
+    label: String, 
+    value: Number,
+
 })
 
 const legumeScores = mongoose.Schema({
-    provisions: [categorySchema],
-    requirements: [categorySchema],
-    agroecology: [categorySchema]
+    provisions: [scoreSchema],
+    requirements: [scoreSchema],
+    agroecology: [scoreSchema]
+})
+
+const legumeTypes = mongoose.Schema({
+    label: String;
 })
 
 const legumeSchema = mongoose.Schema({
-    name: String
+    label: String,
+    type: String,
     scores: legumeScores
     
 })
