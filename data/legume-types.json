@@ -1,0 +1,21 @@
+legume_types = [
+    {
+        "label":"grain_peren",
+        "name":"Grain legume perennial"
+    },
+    {
+        "label": "herb_peren",
+        "name": "Herbaceous legumes - Perennial/regrowth (ability regrowth after seasonal harvesting)
+"
+    },
+    {
+        "label": "tree_coppic",
+        "name": "Tree legumes - coppicing
+"
+    },
+    {
+        "label": "tree_n_coppic",
+        "name": "Tree legumes – non coppicing"
+    },
+
+]

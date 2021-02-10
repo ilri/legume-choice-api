@@ -20,13 +20,19 @@ const mongoURL = process.env.MONGO_URL;
 //Middleware: A function that executes when "routes are being hit".
 const postRoute = require("./routes/post");
 const legumesRoute = require("./routes/legumes");
+const usersRoute = require("./routes/users");
 
 app.use("/api/post", postRoute);
 app.use("/api/legumes", legumesRoute);
+app.use("/api/users", usersRoute);
 
 // Defining a get request and the response from this request
 app.get("/", (req, res) => {
     res.send("<h1>Legume-choice HOME<h1>");
+});
+
+app.get("/other", (req, res) => {
+    res.send("<h1>other<h1>");
 });
 
 // Connect to DB

@@ -1,31 +1,30 @@
-const mongoose = require('mongoose')
+const mongoose = require("mongoose");
 
-const nameSchema = mongoose.Schema({
+const nameSchema = new mongoose.Schema({
     label: String,
     full_name: String,
-})
+});
 
-const scoreSchema = mongoose.Schema({
-    label: String, 
+const scoreSchema = new mongoose.Schema({
+    label: String,
     value: Number,
+});
 
-})
-
-const legumeScores = mongoose.Schema({
+const legumeScores = new mongoose.Schema({
     provisions: [scoreSchema],
     requirements: [scoreSchema],
-    agroecology: [scoreSchema]
-})
+    agroecology: [scoreSchema],
+});
 
-const legumeTypes = mongoose.Schema({
-    label: String;
-})
+const legumeTypes = new mongoose.Schema({
+    label: String,
+    name: String,
+});
 
-const legumeSchema = mongoose.Schema({
+const legumeSchema = new mongoose.Schema({
     label: String,
     type: String,
-    scores: legumeScores
-    
-})
+    scores: legumeScores,
+});
 
-module.exports  = mongoose.model("Legumes", legumeSchema)
+module.exports = mongoose.model("Legumes", legumeSchema);
