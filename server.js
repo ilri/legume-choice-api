@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 
+
 const dotenv = require("dotenv");
 const bodyparser = require("body-parser");
 app.use(bodyparser.json());
@@ -18,11 +19,10 @@ const port = process.env.PORT;
 const mongoURL = process.env.MONGO_URL;
 
 //Middleware: A function that executes when "routes are being hit".
-const postRoute = require("./routes/post");
+
 const legumesRoute = require("./routes/legumes");
 const usersRoute = require("./routes/users");
 
-app.use("/api/post", postRoute);
 app.use("/api/legumes", legumesRoute);
 app.use("/api/users", usersRoute);
 
