@@ -14,3 +14,5 @@ router.route("/submit-data").post(async (req, res) => {
         res.send(err);
     }
 });
+
+module.exports = router;
