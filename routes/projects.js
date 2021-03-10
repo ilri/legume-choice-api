@@ -17,7 +17,7 @@ router.route("/get-projects/").get(async (req, res) => {
 });
 
 // Add a single project
-router.route("/submit-data").post(async (req, res) => {
+router.route("/submit-data/").post(async (req, res) => {
     try {
         const rawdata = req.body;
         const username = req.body.user.username;
