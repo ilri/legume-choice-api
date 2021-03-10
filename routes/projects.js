@@ -5,6 +5,8 @@ const cors = require("cors");
 
 router.use(cors());
 
+router.options("*", cors()); // enabling preflight request
+
 // Get project data
 router.route("/get-projects").get(async (req, res) => {
     try {
