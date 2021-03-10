@@ -6,7 +6,7 @@ const cors = require("cors");
 router.use(cors());
 
 // Get project data
-router.route("/get-projects/").get(async (req, res) => {
+router.route("/get-projects").get(async (req, res) => {
     try {
         //res.send("got projects");
         result = await Projects.find();
