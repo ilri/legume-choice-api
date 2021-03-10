@@ -2,7 +2,6 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 
-
 const dotenv = require("dotenv");
 const bodyparser = require("body-parser");
 app.use(bodyparser.json());
@@ -22,9 +21,11 @@ const mongoURL = process.env.MONGO_URL;
 
 const legumesRoute = require("./routes/legumes");
 const usersRoute = require("./routes/users");
+const projectsRoute = require("./routes/projects");
 
 app.use("/api/legumes", legumesRoute);
 app.use("/api/users", usersRoute);
+app.use("/api/projects", projectsRoute);
 
 // Defining a get request and the response from this request
 app.get("/", (req, res) => {
