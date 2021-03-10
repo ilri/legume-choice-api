@@ -6,4 +6,4 @@ const ProjectSchema = mongoose.Schema({
     projectID: String,
 });
 
-module.exports = mongoose.model("Users", UserSchema);
+module.exports = mongoose.model("Projects", ProjectSchema);
