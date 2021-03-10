@@ -5,7 +5,7 @@ const cors = require("cors");
 
 router.use(cors());
 
-router.options("/submit-data", cors()); // enabling preflight request
+router.options('*', cors())
 
 // Get project data
 router.route("/get-projects").get(async (req, res) => {
@@ -29,11 +29,11 @@ router.route("/submit-data/").post(async (req, res) => {
             username: username,
             projectID: projectID,
         };
-        //const newProject = new Projects(req.body);
+
+	//res.send(projectData)
+        
         const newProject = new Projects(projectData);
         newProject.save();
-        //newUser.save();
-        //res.send("User added");
         res.send("Project Added");
     } catch (err) {
         res.send("Error: " + err);
