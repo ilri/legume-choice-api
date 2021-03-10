@@ -3,6 +3,8 @@ const router = express.Router();
 const Projects = require("../models/Projects");
 const cors = require("cors");
 
+router.use(cors());
+
 // Get project data
 router.route("/get-projects/").get(async (req, res) => {
     try {
