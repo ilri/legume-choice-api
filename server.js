@@ -2,14 +2,10 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 
-
-
 const dotenv = require("dotenv");
 const bodyparser = require("body-parser");
-app.use(bodyparser.json({limit:'50mb'}));
-app.use(bodyparser.urlencoded({limit: '50mb', extended: true}));
-
-
+app.use(bodyparser.json({ limit: "50mb" }));
+app.use(bodyparser.urlencoded({ limit: "50mb", extended: true }));
 
 // Configuring environment variables
 const result = dotenv.config();
@@ -44,7 +40,11 @@ app.get("/other", (req, res) => {
 // Connect to DB
 
 // Mongoose connection
-mongoose.connect(mongoURL, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(mongoURL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+});
 
 const db = mongoose.connection;
 db.once("open", (_) => {

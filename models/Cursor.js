@@ -1,8 +1,10 @@
 const mongoose = require("mongoose");
 
-const CursorSchema = mongoose.Schema({
-    username: String,
-},
-{ capped: { size: 100000000,max: 100000000,  autoIndexId: true });
+const CursorSchema = mongoose.Schema(
+    {},
+    {
+        capped: { size: 100000000, max: 10000000, autoIndexId: true },
+    }
+);
 
-module.exports = mongoose.model("Cursor", CursorSchema);
+module.exports = mongoose.model("Cursors", CursorSchema);
