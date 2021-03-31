@@ -66,16 +66,7 @@ router.route("/submit-data/").post(async (req, res) => {
             // If this submitted data is not the same as the previous data
             if (!_.isEqual(previousProject[0].rawdata, rawdata)) {
                 // Checking if new project name does not equal a previously existing name
-                console.log(
-                    "previous name: " +
-                        previousProject[0].rawdata.projectInfo.projectName
-                );
-                console.log("new name: " + projectName);
-
-                console.log(previousNames);
-                console.log(
-                    "equal names: " + previousNames.includes(projectName)
-                );
+                
                 if (
                     previousProject[0].rawdata.projectInfo.projectName !==
                     projectName
