@@ -28,8 +28,10 @@ router.route("/submit-data/").post(async (req, res) => {
         const projectID = req.body.projectInfo.projectID;
         const projectSecret = req.body.projectSecret.secretKey;
         const date = new Date();
-        const projectName = req.body.projectInfo.projectName;
-
+        const projectName = req.body.projectInfo.projectName.trim();
+        if (req.body.projectInfo.projectName === "") {
+            throw "No project name given";
+        }
         // Merging the variables into a single object
         const projectData = {
             rawdata: rawdata,
@@ -63,8 +65,27 @@ router.route("/submit-data/").post(async (req, res) => {
 
             // If this submitted data is not the same as the previous data
             if (!_.isEqual(previousProject[0].rawdata, rawdata)) {
-                // Make sure they have the correct secret (make sure they have the individual file)
+                // Checking if new project name does not equal a previously existing name
+                console.log(
+                    "previous name: " +
+                        previousProject[0].rawdata.projectInfo.projectName
+                );
+                console.log("new name: " + projectName);
+
+                console.log(previousNames);
+                console.log(
+                    "equal names: " + previousNames.includes(projectName)
+                );
+                if (
+                    previousProject[0].rawdata.projectInfo.projectName !==
+                    projectName
+                ) {
+                    if (previousNames.includes(projectName)) {
+                        throw "You have changed your project name. The new project name matches a different pre-existing project. Please try another name";
+                    }
+                }
                 if (previousProject[0].projectSecret === projectSecret) {
+                    // Make sure they have the correct secret (make sure they have the individual file)
                     //Find and update based on ID
                     const filter = { projectID: projectID };
                     Projects.findOneAndUpdate(
